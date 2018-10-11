@@ -6,16 +6,10 @@ import java.util.function.Consumer;
 public class UserDemo {
     public static void main(String[] args) {
 
-        User testUser = new User("Adam Bielecki", LocalDate.of(1983, 05, 12));
-
         Consumer<User> userData = (user) -> {
             user.printUser(user);
             System.out.println("Age: " + user.returnUserAge(user));
         };
-        showUserData(userData, testUser);
-    }
-
-    static void showUserData(Consumer<User> userData, User user) {
-        userData.accept(user);
+        userData.accept(new User("Adam Bielecki", LocalDate.of(1983, 05, 12)));
     }
 }
