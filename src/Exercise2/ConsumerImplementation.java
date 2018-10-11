@@ -14,9 +14,6 @@ public class ConsumerImplementation {
             System.out.println("Godzina: " + newNow.substring(0,2));
             System.out.println("Minuty: " + newNow.substring(3,5));
         };
-        showTime(substringTime, time.format(now));
-    }
-    static void showTime (Consumer<String> substringTime, String time) {
-        substringTime.accept(time);
+        substringTime.accept(time.format(now));
     }
 }
