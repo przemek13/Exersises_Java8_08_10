@@ -9,7 +9,6 @@ public class FunctionDemo {
             String[] userInput = data.split(",");
             return new User(userInput[0], userInput[1], userInput[2]);
         };
-        User testUser = printUser.apply("Adam,Kowalski,20");
-        System.out.println(testUser);
+        System.out.println(printUser.apply("Adam,Kowalski,20"));
     }
 }
