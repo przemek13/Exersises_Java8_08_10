@@ -6,10 +6,7 @@ import java.util.function.Supplier;
 
 public class DateSupplier {
     public static void main(String[] args) {
-        getDate(() -> LocalDate.now().getDayOfWeek());
-    }
-
-    static void getDate(Supplier<DayOfWeek> supplier) {
-        System.out.println("Current date = " + LocalDate.now() + " -> " + supplier.get());
+        Supplier getDate = () -> LocalDate.now().getDayOfWeek();
+        System.out.println("Current date = " + LocalDate.now() + " -> " + getDate.get());
     }
 }
