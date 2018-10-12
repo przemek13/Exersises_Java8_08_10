@@ -10,10 +10,6 @@ public class SupplierDemo {
             Random generator = new Random();
             return new User(User.namesList.get(generator.nextInt(5)), generator.nextInt(100));
         };
-        returnRandomUser(randomUser);
-    }
-
-    static void returnRandomUser(Supplier<User> supplier) {
-        System.out.println(supplier.get());
+        System.out.println(randomUser.get());
     }
 }
