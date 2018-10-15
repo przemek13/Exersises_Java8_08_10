@@ -27,8 +27,10 @@ public class User {
     }
 
     protected int returnUserAge(User user) {
-        if ((getUserBirthDate() != null) && (LocalDate.now() != null)) {
-            return Period.between(getUserBirthDate(), LocalDate.now()).getYears();
+        LocalDate birthDate = getUserBirthDate();
+        LocalDate now = LocalDate.now();
+        if (birthDate != null && now != null) {
+            return Period.between(birthDate, now).getYears();
         } else {
             return 0;
         }
