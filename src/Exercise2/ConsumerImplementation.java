@@ -7,13 +7,13 @@ import java.util.function.Consumer;
 public class ConsumerImplementation {
     public static void main(String[] args) {
 
-        final DateTimeFormatter time = DateTimeFormatter.ofPattern("HH:mm");
-        LocalTime now = LocalTime.now();
+        final DateTimeFormatter hours = DateTimeFormatter.ofPattern("HH");
+        final DateTimeFormatter minutes = DateTimeFormatter.ofPattern("mm");
 
-        Consumer<String> substringTime = (newNow) -> {
-            System.out.println("Godzina: " + newNow.substring(0,2));
-            System.out.println("Minuty: " + newNow.substring(3,5));
+        Consumer<LocalTime> substringTime = (time) -> {
+            System.out.println("Godzina: " + time.format(hours));
+            System.out.println("Minut: " + time.format(minutes));
         };
-        substringTime.accept(time.format(now));
+        substringTime.accept(LocalTime.now());
     }
 }
