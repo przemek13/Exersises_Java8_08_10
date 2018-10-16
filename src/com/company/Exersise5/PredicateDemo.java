@@ -7,14 +7,10 @@ import java.util.function.Predicate;
 public class PredicateDemo {
     public static void main(String[] args) {
 
-        LocalDate testDate = LocalDate.of(2018, 10, 12);
+        LocalDate testDate = LocalDate.of(2018, 10, 17);
 
         Predicate<LocalDate> dateCheck = (date) -> {
-            if ((Period.between(LocalDate.now(), testDate).getDays() > 0)) {
-                return true;
-            } else {
-                return false;
-            }
+            return (Period.between(LocalDate.now(), testDate).getDays()) > 0 ? true : false;
         };
         System.out.println(testDate + " is a date from the future: " + dateCheck.test(testDate));
     }
