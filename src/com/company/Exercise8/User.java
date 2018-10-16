@@ -1,9 +1,9 @@
 package com.company.Exercise8;
 
 public class User {
-    String firstName;
-    String lastName;
-    String age;
+    private final String firstName;
+    private final String lastName;
+    private final String age;
 
     public User(String firstName, String lastName, String age) {
         this.firstName = firstName;
