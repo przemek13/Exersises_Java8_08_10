@@ -8,7 +8,7 @@ public class SupplierDemo {
 
         Supplier<User> randomUser = () -> {
             Random generator = new Random();
-            return new User(User.namesList.get(generator.nextInt(5)), generator.nextInt(100));
+            return new User(User.NAMES_LIST.get(generator.nextInt(User.getListRange())), generator.nextInt(User.getMaxAge()));
         };
         System.out.println(randomUser.get());
     }
